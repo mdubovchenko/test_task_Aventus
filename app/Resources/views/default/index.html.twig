@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hello</h1>
+    {% if error  %}
+        <h1 style="color: red">{{ error }}</h1>
+    {% endif %}
+    <form>
+        <div>
+            <p>
+                <input type="email" name="email" >
+            </p>
+            <p>
+                <select name="categories">
+                    {% for item in select['value'] %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <p>
+                <button type="submit">Send</button>
+            </p>
+        </div>
+    </form>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
